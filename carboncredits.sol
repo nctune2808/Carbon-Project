@@ -6,33 +6,34 @@ import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 //SPDX-License-Identifier: UNLICENSED
 contract CarbonCredits is Ownable {
 
+    struct CarbonCreditHolder {
+        string name;
+        uint id;
+        uint holderId;
+        uint creditsHeld;
+        uint pricepercredit;
+        uint creditvalidityperiod;
+        address _addr;
+    }
+    struct verifier {
+        string name;
+        string homeCountry;
+        uint reg_no;
+        uint license_no;
+        address addr;
+        bool isExist;
+    }
+    struct customer {
+        string first_name;
+        string last_name;
+        string email;
+        uint contact;
+        uint _id;
+    }
+
 uint totalRegistered = 0;
 uint verifiercount=0;
 uint customercount = 0;
-struct CarbonCreditHolder {
-    string name;
-    uint id;
-    uint holderId;
-    uint creditsHeld;
-    uint pricepercredit;
-    uint creditvalidityperiod;
-    address _addr;
-}
-struct verifier {
-    string name;
-    string homeCountry;
-    uint reg_no;
-    uint license_no;
-    address addr;
-    bool isExist;
-}
-struct customer {
-    string first_name;
-    string last_name;
-    string email;
-    uint contact;
-    uint _id;
-}
 mapping (uint => CarbonCreditHolder) public CreditHolders;
 mapping (uint => verifier) public verifiers;
 mapping(uint => customer) public customers;
