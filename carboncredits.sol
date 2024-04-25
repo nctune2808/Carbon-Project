@@ -38,6 +38,31 @@ mapping (uint => verifier) public verifiers;
 mapping(uint => customer) public customers;
 
 
+
+
+// DRAFT
+
+mapping (uint => CarbonCreditHolder) public CreditHolders;
+mapping (uint => verifier) public verifiers;
+mapping (uint => customer) public customers;
+
+event newCreditHolder(string name, uint holderId, address _addr, ...);
+
+function registerCreditHolder(string name, uint holderId, ...) public {
+    // assign to list of CreditHolders
+    // emit event for new holder;
+}
+
+function registerVerifiers(string name, uint license_no, ...) public {
+    // check if verifier exist already
+    // check license number in ISO DB
+    // assign to list of verifiers
+}
+function registerCustomer(string name, uint contact, ...) public {
+    // assign to list of customers
+}
+
+// NO
 event newCreditHolder(string name, uint holderId, uint creditsHeld, uint pricepercredit, uint creditvalidityperiod, address _addr);
 
 function registerCreditHolder(string memory name, uint holderId, uint creditsHeld, uint pricepercredit, uint creditvalidityperiod) public {
