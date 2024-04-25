@@ -7,7 +7,7 @@ import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 //SPDX-License-Identifier: UNLICENSED
 contract CreditToken is CarbonCredits, ERC20{
 
-    // @overide
+    // @override
     constructor() ERC20("Carbon", "C") public {}
 
     mapping(address => uint) public BalanceOf;
