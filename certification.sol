@@ -5,6 +5,27 @@ import './credittoken.sol';
 
 //SPDX-License-Identifier: UNLICENSED
 contract Certification is CreditToken {
+
+    mapping (uint => address) internal idToOwner;
+    mapping (uint => address) internal idToApproval;
+    mapping (address => uint) private ownerToNFTokenCount;
+    mapping (address => uint) public burnedTokens;
+
+    function addBurnedTokens(address holder) public {
+        // check burned token add to approval burned list
+    }
+    function mint(address _to, uint256 _tokenId) internal virtual {
+        // check address valid id to owner
+        // check burned token > standard amount
+        // add NFT certification to tokenId;
+        // emit event Transfer(...);
+    }
+    function _addNFToken(address _to, uint256 _tokenId) internal virtual {
+        // check owner NFT exist already
+        // set owner NFT list has new tokenn
+    }
+
+    // NO
     constructor() public { }
     string public constant _name = 'Gold Standard';
     string public constant _symbol = 'GS';
