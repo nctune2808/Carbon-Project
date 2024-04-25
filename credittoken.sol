@@ -15,15 +15,15 @@ contract CreditToken is CarbonCredits, ERC20{
     mapping(address => uint) public tokensApprovedForBurn;
 
     modifier onlyVerifier() { // sender is verifier }
-    modifier onlyCreditHolder() { // sender is CreditHolders }
+    modifier onlyHolder() { // sender is CreditHolders }
 
-    function approveCreditsHeld(address _holder) public onlyVerifier{...}
+    function approveCredits(address _holder) public onlyVerifier{...}
 
-    function createCarbonToken() public onlyCreditHolder() returns(uint) {
+    function createToken() public onlyCreditHolder() returns(uint) {
         // assign owner address with returning total supply
         // start minting token from sender
     }
-    function transferCarbonCredits(address from, address to, uint value) public onlyCreditHolder() {
+    function transferToken(address from, address to, uint value) public onlyHolder() {
         // transfer token from sender to receiver with value
         // update stakeholder balance
     }
