@@ -17,13 +17,13 @@ contract CreditToken is CarbonCredits, ERC20{
     modifier onlyVerifier() { // sender is verifier }
     modifier onlyHolder() { // sender is CreditHolders }
 
-    function approveCredits(address _holder) public onlyVerifier{...}
+    function approveCredits(address _holder) public onlyVerifier(){...}
 
     function createToken() public onlyCreditHolder() returns(uint) {
         // assign owner address with returning total supply
         // start minting token from sender
     }
-    function transferToken(address from, address to, uint value) public onlyHolder() {
+    function transferToken(addr from, addr to, uint value) public onlyHolder(){
         // transfer token from sender to receiver with value
         // update stakeholder balance
     }
