@@ -5,7 +5,35 @@ import './carboncredits.sol';
 import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol';
 
 //SPDX-License-Identifier: UNLICENSED
-contract CreditToken is CarbonCredits,ERC20{
+contract CreditToken is CarbonCredits, ERC20{
+
+    // @overide
+    constructor() ERC20("Carbon", "C") public {}
+
+    mapping(address => uint) public BalanceOf;
+    mapping(address => uint) public approvedCredits;
+    mapping(address => uint) public tokensApprovedForBurn;
+
+    modifier onlyVerifier() { // sender is verifier }
+    modifier onlyCreditHolder() { // sender is CreditHolders }
+
+    function approveCreditsHeld(address _holder) public onlyVerifier{...}
+
+    function createCarbonToken() public onlyCreditHolder() returns(uint) {
+        // assign owner address with returning total supply
+        // start minting token from sender
+    }
+    function transferCarbonCredits(address from, address to, uint value) public onlyCreditHolder() {
+        // transfer token from sender to receiver with value
+        // update stakeholder balance
+    }
+    function burnTokens() public onlyOwner() returns(bool) {
+        // return condition approval if owner allows to burn token
+    }
+    
+
+
+    // NO
     uint totalsupply;
     uint supply;
     uint tokenBurnedCount =0;
