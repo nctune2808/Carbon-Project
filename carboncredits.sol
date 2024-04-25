@@ -52,7 +52,6 @@ function registerCreditHolder(string name, uint holderId, ...) public {
     // assign to list of CreditHolders
     // emit event for new holder;
 }
-
 function registerVerifiers(string name, uint license_no, ...) public {
     // check if verifier exist already
     // check license number in ISO DB
